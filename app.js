@@ -54,7 +54,7 @@ app.get("/todos/", async (request, response) => {
   const { search_q = "", priority, status, category, due_date } = request.query;
 
   switch (true) {
-    case hasPriorityAndStatusProperties(request.query):
+    case hasPriorityAndStatusAndCategoryAndDue_dateProperties(request.query):
       getTodosQuery = `
       SELECT
         *
